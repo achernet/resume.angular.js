@@ -1,0 +1,46 @@
+.company {
+  text-indent: 0.25in;
+}
+
+.company-name {
+  font-style: italic;
+}
+
+.company-title {
+  font-weight: bold;
+}
+
+.link {
+  color: #0000FF;
+  font-style: italic;
+}
+
+.location {
+  font-style: normal;
+}
+
+.bullets {
+    /*padding-top: 3px;*/
+    /*padding-bottom: 3px;*/
+    /*margin-top: 3px;*/
+    /*margin-bottom: 3px;*/
+    /*line-height: 120%;*/
+    /*text-indent: hanging 0.25in;*/
+}
+
+.heading {
+    font-weight: bold;
+    text-indent: 0;
+}
+
+.candidate {
+    font-size: 11pt;
+}
+
+.section {
+    text-indent: 0.5in;
+}
+
+.main-section {
+    margin-bottom: 9pt;
+}
