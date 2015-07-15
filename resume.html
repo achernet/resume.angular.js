@@ -1,95 +1,127 @@
 <html>
-  <head>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="css/resume.css">
-    <script src="js/angular.min.js"></script>
-    <script src="js/angular-sanitize.min.js"></script>
-  </head>
-  <body ng-app="myApp" ng-controller="myHistory">
-    <div class="container text-center candidate">
-      <div class="row"><b>{{ candidate.name }}</b></div>
-      <div class="row">
-        {{ candidate.address.street }}
-        &nbsp;&#9642;
-        {{ candidate.address.city }},&nbsp;
-        {{ candidate.address.state }}&nbsp;
-        {{ candidate.address.zip }}
-        &nbsp;&#9642;
-        {{ candidate.phone }}
-      </div>
-      <div class="row">
-        <a ng-href="mailto://{{candidate.email}}">{{ candidate.email }}</a>
-      </div>
-    </div>
-    <div class="container main-section">
-      <div class="heading">Objective</div>
-      <div class="section">
-        {{ objective }}
-      </div>
-    </div>
-    <div class="container main-section">
-      <div class="heading">Education</div>
-      <div class="container">
-        <div class="row">
-          <div class="section pull-left">
-            {{ edu.college }}
-          </div>
+    <head>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/resume.css">
+        <script src="js/angular.min.js"></script>
+        <script src="js/angular-sanitize.min.js"></script>
+    </head>
+    <body ng-app="myApp" ng-controller="myHistory">
+        <!-- Candidate information (top center) section -->
+        <div class="container text-center candidate">
+            <div class="row"><b>{{ candidate.name }}</b></div>
+            <div class="row">
+                {{ candidate.address.street }}
+                &nbsp;&#9642;
+                {{ candidate.address.city }},&nbsp;
+                {{ candidate.address.state }}&nbsp;
+                {{ candidate.address.zip }}
+                &nbsp;&#9642;
+                {{ candidate.phone }}
+            </div>
+            <div class="row">
+                <a ng-href="mailto://{{candidate.email}}">{{ candidate.email }}</a>
+            </div>
         </div>
-        <div class="row">
-          <div class="section pull-left">
-            {{ edu.degree }}, &nbsp;{{ edu.date }}
-          </div>
-          <div class="section pull-right">
-            <b>SAT:</b>&nbsp;{{ edu.sat }}
-          </div>
+        <!-- Objective section -->
+        <div class="container main-section">
+            <div class="heading">Objective</div>
+            <div class="section">
+                {{ objective }}
+            </div>
         </div>
-        <div class="row">
-          <div class="section pull-left">
-            <b>Major:</b>&nbsp;{{ edu.major }}
-          </div>
-          <div class="section pull-right">
-            <b>Dean&apos;s List:</b>&nbsp;{{ edu.deans.join(', ') }}
-          </div>
+        <!-- Education section -->
+        <div class="container main-section">
+            <div class="heading">Education</div>
+            <div class="container">
+                <div class="row">
+                    <div class="section pull-left">
+                        {{ edu.college }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="section pull-left">
+                        {{ edu.degree }}, &nbsp;{{ edu.date }}
+                    </div>
+                    <div class="section pull-right">
+                        <b>SAT:</b>&nbsp;{{ edu.sat }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="section pull-left">
+                        <b>Major:</b>&nbsp;{{ edu.major }}
+                    </div>
+                    <div class="section pull-right">
+                        <b>Dean&apos;s List:</b>&nbsp;{{ edu.deans.join(', ') }}
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-    <div class="container main-section">
-      <div class="heading">Technical Skills</div>
-      <ul>
-        <li><b>Languages:</b>&nbsp;{{ skills.langs.join(', ') }}</li>
-        <li><b>GUI Frameworks & IDEs:</b>&nbsp;{{ skills.guis.join(', ') }}</li>
-        <li><b>Platforms & Systems:</b>&nbsp;{{ skills.plats.join(', ') }}</li>
-      </ul>
-    </div>
-    <div class="container main-section">
-      <div class="heading">Professional Experience</div>
-      <div class="container" ng-repeat="comp in companies">
-        <div class="row">
-          <div class="company pull-left">
-            <span class="company-name">{{ comp.company }}</span>
-            &nbsp;-&nbsp;
-            <a class="link" ng-href="{{ comp.link }}">{{ comp.link }}</a>
-            &nbsp;-&nbsp;
-            <span class="location">{{ comp.location }}</span>
-          </div>
+        <!-- Technical Skills section -->
+        <div class="container main-section">
+            <div class="heading">Technical Skills</div>
+            <ul>
+                <li><b>Languages:</b>&nbsp;{{ skills.langs.join(', ') }}</li>
+                <li><b>GUI Frameworks & IDEs:</b>&nbsp;{{ skills.guis.join(', ') }}</li>
+                <li><b>Platforms & Systems:</b>&nbsp;{{ skills.plats.join(', ') }}</li>
+            </ul>
         </div>
-        <div class="row">
-          <div class="company pull-left">
-            <span class="company-title">
-              {{ comp.title }}
-            </span>
-          </div>
-          <div class="company pull-right">
-            {{ comp.start }}&nbsp;-&nbsp;{{ comp.end }}
-          </div>
+        <!-- Professional Experience section -->
+        <div class="container main-section">
+            <div class="heading">Professional Experience</div>
+            <div class="container" ng-repeat="comp in companies">
+                <div class="row">
+                    <div class="company pull-left">
+                        <span class="company-name">{{ comp.name }}</span>
+                        &nbsp;-&nbsp;
+                        <a class="link" ng-href="{{ comp.link }}">{{ comp.link }}</a>
+                        &nbsp;-&nbsp;
+                        <span class="location">{{ comp.location }}</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="company pull-left">
+                        <span class="company-title">
+                          {{ comp.title }}
+                        </span>
+                    </div>
+                    <div class="company pull-right">
+                        {{ comp.start }}&nbsp;-&nbsp;{{ comp.end }}
+                    </div>
+                </div>
+                <ul class="bullets" ng-repeat="bullet in comp.bullets">
+                    <li ng-bind-html="bullet"></li>
+                </ul>
+            </div>
         </div>
-        <ul class="bullets" ng-repeat="bullet in comp.bullets">
-          <li ng-bind-html="bullet"></li>
-        </ul>
-      </div>
-    </div>
-    <script src="js/resume.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-  </body>
+        <!-- Entrepreneurial and Personal Projects section -->
+        <div class="container main-section">
+            <div class="heading">Entrepreneurial and Personal Projects</div>
+            <div class="container" ng-repeat="proj in projects">
+                <div class="row">
+                    <div class="company pull-left">
+                        <span class="company-name">{{ proj.name }}</span>
+                        {{ proj.link ? "&nbsp;-&nbsp;" : "" }}
+                        <a class="link" ng-href="{{ proj.link }}">{{ proj.link }}</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="company pull-left">
+                        <span class="company-title">
+                            {{ proj.title }}
+                        </span>
+                    </div>
+                    <div class="company pull-right">
+                        {{ proj.start }}&nbsp;-&nbsp;{{ proj.end }}
+                    </div>
+                </div>
+                <ul class="bullets" ng-repeat="bullet in proj.bullets">
+                    <li ng-bind-html="bullet"></li>
+                </ul>
+            </div>
+        </div>
+        
+        <script src="js/resume.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+    </body>
 </html>

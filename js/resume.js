@@ -22,11 +22,17 @@ app.controller("myHistory", [
             sat: "1440 (800M, 640V)",
             deans: ["Fall 2005", "Winter 2008"]
         };
+        $scope.skills = {
+            langs: ["Python", "Cython", "SQL (PostgreSQL/Oracle/MySQL)", "C/C++", "C#/.NET", "Java", "Bash shell",
+                "OpenGL", "ASM (HC12, Intel x86, MIPS)"],
+            guis: ["Qt4", "Qt5", "Eclipse", "Visual Studio", "SharpDevelop", "Xamarin"],
+            plats: ["GNU/Linux (85%)", "Windows (10%)", "Other UNIX/BSD/Darwin (5%)"]
+        };
         $scope.companies = [
             {
                 end: "Mar 2015",
                 title: "Senior Software Development Consultant",
-                company: "Zonar Systems",
+                name: "Zonar Systems",
                 start: "Nov 2014",
                 link: "http://www.zonarsystems.com",
                 location: "Seattle, WA",
@@ -40,7 +46,7 @@ app.controller("myHistory", [
             {
                 end: "Sep 2014",
                 title: "Market Risk Analysis and Development Consultant",
-                company: "Bank of America",
+                name: "Bank of America",
                 start: "Aug 2013",
                 link: "http://www.bankofamerica.com",
                 location: "Manhattan, NY",
@@ -52,7 +58,7 @@ app.controller("myHistory", [
             {
                 end: "Mar 2013",
                 title: "Software Developer",
-                company: "Wireless Generation",
+                name: "Wireless Generation",
                 start: "Oct 2011",
                 link: "http://www.wirelessgeneration.com",
                 location: "Brooklyn, NY",
@@ -66,7 +72,7 @@ app.controller("myHistory", [
             {
                 end: "Feb 2011",
                 title: "User Interface and Systems Software Engineer",
-                company: "3VR Security, Inc.",
+                name: "3VR Security, Inc.",
                 start: "Jul 2010",
                 link: "http://www.3vr.com",
                 location: "San Francisco, CA",
@@ -78,7 +84,7 @@ app.controller("myHistory", [
             {
                 end: "Oct 2009",
                 title: "Software Engineering Intern",
-                company: "Visual Purple, LLC",
+                name: "Visual Purple, LLC",
                 start: "Jun 2009",
                 link: "http://www.visualpurple.com",
                 location: "San Luis Obispo, CA",
@@ -89,12 +95,35 @@ app.controller("myHistory", [
                 ]
             }
         ];
-        $scope.skills = {
-            langs: ["Python", "Cython", "SQL (PostgreSQL/Oracle/MySQL)", "C/C++", "C#/.NET", "Java", "Bash shell",
-                    "OpenGL", "ASM (HC12, Intel x86, MIPS)"],
-            guis: ["Qt4", "Qt5", "Eclipse", "Visual Studio", "SharpDevelop", "Xamarin"],
-            plats: ["GNU/Linux (85%)", "Windows (10%)", "Other UNIX/BSD/Darwin (5%)"]
-        };
+        $scope.projects = [
+            {
+                end: "Jan 2012",
+                title: "Software Developer",
+                name: "Personal Trading System",
+                start: "Aug 2010",
+                link: null,
+                location: null,
+                bullets: [
+                    "Developed a multithreaded, client-side application in C#/SQL to download, parse, and reconcile raw market data from various exchange sources, including NASDAQ, Yahoo, TheStreet, and MSN.",
+                    "Developed algorithms to compensate for human behavior and perception with regard to time discounting.",
+                    "Designed a normalized SQL database to store stock market data, including the latest grades from TheStreet, which led to the discovery of a relationship between the grade of a stock and the accuracy of trend predictions made on that stock.",
+                    "Designed and implemented backend SQL stored procedures for tasks such as the normalization of arbitrary ranges of values, including trading volumes and market capitalization values."
+                ]
+            },
+            {
+                end: "2008",
+                title: "Coder, Mapper, and Game Hacker",
+                name: "Grand Theft Auto: State of Liberty",
+                start: "Jun 2004",
+                link: "http://gtastateofliberty.com",
+                location: null,
+                bullets: [
+                    "Provided the capability to take multiple GTA in-game maps and combine them into a single game world.",
+                    "Utilized x86 assembly language to locate and remove multiple limitations in <i>Grand Theft Auto: Vice City</i>",
+                    "Developed a program with a GUI frontend to remove the limits (<a href=\"http://www.chernetz.com/files/limadj20.zip\">link</a>)"
+                ]
+            }
+        ];
     }
 ]);
 
