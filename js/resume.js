@@ -11,8 +11,13 @@ app.controller("myHistory", [
                 state: "WA",
                 zip: "98032-6242"
             },
-            phone: "(520) 425-7376 cell"
+            phone: "(520) 425-7376 cell",
         };
+        $scope.download = {
+            doc: "http://chernetz.com/files/resume.doc",
+            docx: "http://chernetz.com/files/resume.docx",
+            pdf: "http://chernetz.com/files/resume.pdf"
+        }
         $scope.objective = "A contract that will utilize my background in Python development in order to gain new insights and knowledge in the data analytics space.";
         $scope.edu = {
             college: "California Polytechnic State University, San Luis Obispo",
@@ -20,7 +25,15 @@ app.controller("myHistory", [
             degree: "Bachelor of Science",
             date: "March 2010",
             sat: "1440 (800M, 640V)",
-            deans: ["Fall 2005", "Winter 2008"]
+            deans: ["Fall 2005", "Winter 2008"],
+            projects: [
+                "Created a dual-axis solar tracker optimized for minimum power on an AVR platform with C++, March 2010 (<a href=\"http://www.chernetz.com/files/SunAngle.zip\">link</a>)",
+                "<b>Senior Project:</b>&nbsp;Developed a display and web interface using Java and the Swing framework for exercise machines that will generate renewable energy upon completion of the Recreation Center expansion at Cal Poly, December 2009 (<a href=\"http://digitalcommons.calpoly.edu/cgi/viewcontent.cgi?article=1001&context=cpesp\">link</a>)",
+                "Implemented floating-point arithmetic using assembly language for the 16-bit Motorola HC12, June 2009 (<a href=\"http://www.chernetz.com/files/hc12sim.zip\">link</a>)",
+                "Developed a stereophonic audio player in C++ and in VHDL on a Xilinx Spartan3 FPGA, November 2008 (<a href=\"http://www.chernetz.com/files/lab5.zip\">link</a>)",
+                "Utilized MOSFETs to create an optimized 8-input AND gate, May 2008 (<a href=\"http://sites.google.com/a/calpoly.edu/01_08EE307S08/\">link</a>)",
+                "Organized a flood control project to recover damaged habitat in the Santa Catalina Mountains, December 2004"
+            ]
         };
         $scope.skills = {
             langs: ["Python", "Cython", "SQL (PostgreSQL/Oracle/MySQL)", "C/C++", "C#/.NET", "Java", "Bash shell",
@@ -124,6 +137,10 @@ app.controller("myHistory", [
                 ]
             }
         ];
+        $scope.achievements = [
+            "Earned Eagle Scout rank, Boy Scouts of America, March 2005",
+            "Earned CompTIA A+ Certification, February 2005"
+        ]
     }
 ]);
 

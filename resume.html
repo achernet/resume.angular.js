@@ -12,15 +12,19 @@
             <div class="row"><b>{{ candidate.name }}</b></div>
             <div class="row">
                 {{ candidate.address.street }}
-                &nbsp;&#9642;
-                {{ candidate.address.city }},&nbsp;
-                {{ candidate.address.state }}&nbsp;
-                {{ candidate.address.zip }}
-                &nbsp;&#9642;
+                &nbsp;&#9642;&nbsp;
+                {{ candidate.address.city + ', ' + candidate.address.state + ' ' + candidate.address.zip }}
+                &nbsp;&#9642;&nbsp;
                 {{ candidate.phone }}
             </div>
             <div class="row">
                 <a ng-href="mailto://{{candidate.email}}">{{ candidate.email }}</a>
+            </div>
+            <div class="row">
+                <b>Download a hard copy:</b>&nbsp;
+                <a ng-href="{{ download.doc }}">.doc</a>
+                <a ng-href="{{ download.docx }}">.docx</a>
+                <a ng-href="{{ download.pdf }}">.pdf</a>
             </div>
         </div>
         <!-- Objective section -->
@@ -120,7 +124,24 @@
                 </ul>
             </div>
         </div>
-        
+        <!-- Academic Projects section -->
+        <div class="container main-section">
+            <div class="heading">Academic Projects</div>
+            <div class="container">
+                <ul class="bullets" ng-repeat="bullet in edu.projects">
+                    <li ng-bind-html="bullet"></li>
+                </ul>
+            </div>
+        </div>
+        <!-- First Achievements section -->
+        <div class="container main-section">
+            <div class="heading">First Achievements</div>
+            <div class="container">
+                <ul class="bullets" ng-repeat="bullet in achievements">
+                    <li ng-bind-html="bullet"></li>
+                </ul>
+            </div>
+        </div>
         <script src="js/resume.js"></script>
         <script src="js/bootstrap.min.js"></script>
     </body>
